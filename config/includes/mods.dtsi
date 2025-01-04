@@ -18,9 +18,8 @@
                      53       \
                      68 69 70 \
 
-/ {
 
-  behaviors {
+behaviors {
 
     // Positional Homerow mods
     // Homerow mods that prevent accidental activations when rolling keys,
@@ -79,5 +78,4 @@
       quick_tap_ms = <175>;
       retro-tap;
     };
-  };
 };
