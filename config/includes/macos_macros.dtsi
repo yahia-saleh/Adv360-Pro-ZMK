@@ -44,12 +44,12 @@ mac_redo: macos_redo {
         compatible = "zmk,behavior-macro-one-param";
         label = "LEFT_BRACKET_LETTER";
         #binding-cells = <1>;
-        bindings = <&kp LBKT>, <&kp MACRO_PARAM1>;
+        bindings = <&kp LBKT>, <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>;
     };
 
     right_bracket_letter: right_bracket_letter {
         compatible = "zmk,behavior-macro-one-param";
         label = "RIGHT_BRACKET_LETTER";
         #binding-cells = <1>;
-        bindings = <&kp RBKT>, <&kp MACRO_PARAM1>;
+        bindings = <&kp RBKT>, <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>;
     };
