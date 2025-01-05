@@ -4,6 +4,9 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
 
+// personal includes
+#include "includes/settings.dtsi"
+
 #define MEH LC(LS(LALT))
 
 // reference Folke's config here https://github.com/folke/zmk-config/blob/41a45d999742f2e523b5e9bfb9791846d4d24bea/config/base.keymap#L20
@@ -14,7 +17,6 @@
       #include "macros.dtsi"
       #include "version.dtsi"
 
-      #include "includes/settings.dtsi"
       #include "includes/mods.dtsi"
       #include "includes/macos_macros.dtsi"
 
