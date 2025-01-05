@@ -1,0 +1,36 @@
+behaviors {
+mac_redo: macos_redo {
+          compatible = "zmk,behavior-macro";
+          label = "MACOS_REDO";
+          #binding-cells = <0>;
+          bindings = <&kp LG(LS(Z))>;
+      };
+
+      mac_undo: macos_undo {
+          compatible = "zmk,behavior-macro";
+          label = "MACOS_UNDO";
+          #binding-cells = <0>;
+          bindings = <&kp LG(Z)>;
+      };
+
+      mac_copy: macos_copy {
+          compatible = "zmk,behavior-macro";
+          label = "MACOS_COPY";
+          #binding-cells = <0>;
+          bindings = <&kp LG(C)>;
+      };
+
+      mac_paste: macos_paste {
+          compatible = "zmk,behavior-macro";
+          label = "MACOS_PASTE";
+          #binding-cells = <0>;
+          bindings = <&kp LG(V)>;
+      };
+
+      mac_cut: macos_cut {
+          compatible = "zmk,behavior-macro";
+          label = "MACOS_CUT";
+          #binding-cells = <0>;
+          bindings = <&kp LG(X)>;
+      };
+};
