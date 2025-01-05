@@ -24,89 +24,59 @@
 
 // Changed urob's require-prior-idle-ms from 150 to 120
 
-behaviors {
+// Positional Homerow mods
+// Homerow mods that prevent accidental activations when rolling keys,
+// such as when typing `st` or `ne` on colemak-dh layouts or `as` on
+// qwerty.
+//
+// Works by only allowing a mod to activate within tapping-term if
+// it's on the opposite side of the keyboard or on the same side thumb
+// keys.
 
-    // Positional Homerow mods
-    // Homerow mods that prevent accidental activations when rolling keys,
-    // such as when typing `st` or `ne` on colemak-dh layouts or `as` on
-    // qwerty.
-    //
-    // Works by only allowing a mod to activate within tapping-term if
-    // it's on the opposite side of the keyboard or on the same side thumb
-    // keys.
+// Further optimization using urob's timerless homerow mods method:
+// https://github.com/urob/zmk-config#timeless-homerow-mods
+hml: homerow_mods_left {
+  compatible = "zmk,behavior-hold-tap";
+  label = "HOMEROW_MODS_LEFT";
+  #binding-cells = <2>;
+  flavor = "tap-preferred";
+  tapping-term-ms = <HM_TAPPING_TERM_FAST>;
+  quick-tap-ms = <175>;        // repeat on tap-into-hold
+  require-prior-idle-ms = <HM_PRIOR_IDLE>;
+  bindings = <&kp>, <&kp>;
+  hold-trigger-key-positions = <KEYS_R THUMBS_LEFT THUMBS_RIGHT>;
+  hold-trigger-on-release;
+};
 
-    // Further optimization using urob's timerless homerow mods method:
-    // https://github.com/urob/zmk-config#timeless-homerow-mods
-    hml: homerow_mods_left {
-      compatible = "zmk,behavior-hold-tap";
-      label = "HOMEROW_MODS_LEFT";
-      #binding-cells = <2>;
-      flavor = "tap-preferred";
-      tapping-term-ms = <HM_TAPPING_TERM_FAST>;
-      quick-tap-ms = <175>;        // repeat on tap-into-hold
-      require-prior-idle-ms = <HM_PRIOR_IDLE>;
-      bindings = <&kp>, <&kp>;
-      hold-trigger-key-positions = <KEYS_R THUMBS_LEFT THUMBS_RIGHT>;
-      hold-trigger-on-release;
-    };
+hmr: homerow_mods_right {
+  compatible = "zmk,behavior-hold-tap";
+  label = "HOMEROW_MODS_RIGHT";
+  #binding-cells = <2>;
+  flavor = "tap-preferred";
+  tapping-term-ms = <HM_TAPPING_TERM_FAST>;
+  quick-tap-ms = <175>;        // repeat on tap-into-hold
+  require-prior-idle-ms = <HM_PRIOR_IDLE>;
+  bindings = <&kp>, <&kp>;
+  hold-trigger-key-positions = <KEYS_L THUMBS_LEFT THUMBS_RIGHT>;
+  hold-trigger-on-release;
+};
 
-    hmr: homerow_mods_right {
-      compatible = "zmk,behavior-hold-tap";
-      label = "HOMEROW_MODS_RIGHT";
-      #binding-cells = <2>;
-      flavor = "tap-preferred";
-      tapping-term-ms = <HM_TAPPING_TERM_FAST>;
-      quick-tap-ms = <175>;        // repeat on tap-into-hold
-      require-prior-idle-ms = <HM_PRIOR_IDLE>;
-      bindings = <&kp>, <&kp>;
-      hold-trigger-key-positions = <KEYS_L THUMBS_LEFT THUMBS_RIGHT>;
-      hold-trigger-on-release;
-    };
-
-    hmls: homerow_mods_left_shift {
-      compatible = "zmk,behavior-hold-tap";
-      label = "HOMEROW_MODS_LEFT";
-      #binding-cells = <2>;
-      flavor = "hold-preferred";
-      tapping-term-ms = <280>;
-      quick-tap-ms = <175>;        // repeat on tap-into-hold
-      require-prior-idle-ms = <0>;
-      bindings = <&kp>, <&kp>;
-      hold-trigger-key-positions = <KEYS_R THUMBS_LEFT THUMBS_RIGHT>;
-      hold-trigger-on-release;
-    };
-
-
-    hmrs: homerow_mods_right_shift {
-      compatible = "zmk,behavior-hold-tap";
-      label = "HOMEROW_MODS_LEFT";
-      #binding-cells = <2>;
-      flavor = "hold-preferred";
-      tapping-term-ms = <280>;
-      quick-tap-ms = <175>;        // repeat on tap-into-hold
-      require-prior-idle-ms = <0>;
-      bindings = <&kp>, <&kp>;
-      hold-trigger-key-positions = <KEYS_L THUMBS_LEFT THUMBS_RIGHT>;
-      hold-trigger-on-release;
-    };
-
-    /*
-     * Non-Positional Homerow Mods
-     * Used for &mm_grescm_gui behavior on left hand.
-     *150
-     * Usage: &hm LSHFT T
-     * Tap: T
-     * Tap-Tap-Hold: Repeat T
-     * Hold: LSHIFT
-     */
-    tm: thumb_mods {
-      compatible = "zmk,behavior-hold-tap";
-      label = "THUMB_MODS";
-      #binding-cells = <2>;
-      bindings = <&kp>, <&kp>;
-      flavor = "balanced";
-      tapping-term-ms = <200>;
-      quick_tap_ms = <175>;
-      retro-tap;
-    };
+/*
+ * Non-Positional Homerow Mods
+ * Used for &mm_grescm_gui behavior on left hand.
+ *150
+ * Usage: &hm LSHFT T
+ * Tap: T
+ * Tap-Tap-Hold: Repeat T
+ * Hold: LSHIFT
+ */
+tm: thumb_mods {
+  compatible = "zmk,behavior-hold-tap";
+  label = "THUMB_MODS";
+  #binding-cells = <2>;
+  bindings = <&kp>, <&kp>;
+  flavor = "balanced";
+  tapping-term-ms = <200>;
+  quick_tap_ms = <175>;
+  retro-tap;
 };
