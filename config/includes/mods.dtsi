@@ -59,7 +59,7 @@ hmr: homerow_mods_right {
             quick-tap-ms = <175>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
 
-            hold-trigger-key-positions = <KEYS_R KEYS_T>;
+            hold-trigger-key-positions = <KEYS_R THUMBS_RIGHT>;
             // hold-trigger-on-release;
         };
 
@@ -73,7 +73,7 @@ hmr: homerow_mods_right {
             quick-tap-ms = <175>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
 
-            hold-trigger-key-positions = <KEYS_L KEYS_T>;
+            hold-trigger-key-positions = <KEYS_L THUMBS_LEFT>;
             // hold-trigger-on-release;
         };
 
