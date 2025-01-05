@@ -41,8 +41,8 @@ behaviors {
       compatible = "zmk,behavior-hold-tap";
       label = "HOMEROW_MODS_LEFT";
       #binding-cells = <2>;
-      flavor = "balanced";
-      tapping-term-ms = <HM_TAPPING_TERM>;
+      flavor = "tap-preferred";
+      tapping-term-ms = <HM_TAPPING_TERM_FAST>;
       quick-tap-ms = <175>;        // repeat on tap-into-hold
       require-prior-idle-ms = <HM_PRIOR_IDLE>;
       bindings = <&kp>, <&kp>;
@@ -54,8 +54,8 @@ behaviors {
       compatible = "zmk,behavior-hold-tap";
       label = "HOMEROW_MODS_RIGHT";
       #binding-cells = <2>;
-      flavor = "balanced";
-      tapping-term-ms = <HM_TAPPING_TERM>;
+      flavor = "tap-preferred";
+      tapping-term-ms = <HM_TAPPING_TERM_FAST>;
       quick-tap-ms = <175>;        // repeat on tap-into-hold
       require-prior-idle-ms = <HM_PRIOR_IDLE>;
       bindings = <&kp>, <&kp>;
