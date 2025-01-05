@@ -30,10 +30,10 @@
     default_layer {
       bindings = <
         &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                                          &mo 3 &kp N6     &kp N7       &kp N8      &kp N9      &kp N0          &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                           &none &kp Y      &kp U        &kp I       &kp O       &kp P           &kp BSLH
+        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                           &none &kp Y      &kp U        &lt 7 I       &lt 8 O       &kp P           &kp BSLH
         &kp ESC   &hml LCTRL A &hml LALT S  &hml LGUI D   &hml LSHFT F  &hml MEH G  &none             &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL    &none &hmr MEH H &hmr LSHFT J &hmr LGUI K &hmr LALT L  &hmr LCTRL SEMI &kp SQT
         &kp LSHFT &kp Z       &kp X       &kp C        &kp V        &kp B                                       &kp HOME &kp PG_UP                               &kp N        &kp M       &kp COMMA    &kp DOT     &kp FSLH        &kp RSHFT
-        &mo 2     &kp GRAVE   &kp CAPS    &kp LEFT     &kp RIGHT                           &lt 4 BSPC &kp DEL   &kp END  &kp PG_DN &kp ENTER &kp SPACE                        &kp UP      &kp DOWN     &kp LBKT    &kp RBKT        &mo 2
+        &mo 2     &kp GRAVE   &kp CAPS    &kp LEFT     &kp RIGHT                           &lt 4 BSPC &lt 5 DEL &kp END  &kp PG_DN &lt 5 ENTER &lt 6 SPACE                        &kp UP      &kp DOWN     &kp LBKT    &kp RBKT        &mo 2
       >;
     };
     keypad {
@@ -65,11 +65,47 @@
     };
     nav {
       bindings = <
-        &none   &none    &none   &none   &none   &none  &tog 1                                                           &trans &none       &none       &none      &none        &none        &none
+        &none   &none    &none   &none   &none   &none  &trans                                                           &trans &none       &none       &none      &none        &none        &none
         &none   &none    &none   &none   &none   &none  &none                                                            &trans &mac_redo   &mac_paste  &mac_copy  &mac_undo    &none        &none
         &none   &trans   &trans  &trans  &trans  &none  &none           &trans &trans &trans &trans                      &none  &kp LEFT    &kp DOWN    &kp UP     &kp RIGHT    &caps_word   &kp DEL
         &none   &none    &none   &none   &none   &none                         &trans &trans                                    &kp INS     &kp HOME    &kp PG_UP  &kp PG_DN    &kp END      &mac_emoji
         &trans  &none    &none   &none   &none                 &trans  &trans  &trans &trans &trans &trans                                  &none       &none       &none      &none         &trans
+      >;
+    };
+    sym {
+      bindings = <
+        &none   &none     &none     &none     &none     &none    &trans                                                           &trans &none    &none     &none    &none    &none        &none
+        &none   &kp SQT   &kp LT    &kp GT    &kp DQT   &kp DOT  &none                                                            &trans &kp AMPS &none     &kp LBKT &kp RBKT    &kp PERCENT  &none
+        &none   &kp EXCL  &kp minus &kp plus  &kp EQUAL &kp HASH &none           &trans &trans &trans &trans                      &none  &kp PIPE  &kp COLON &kp LPAR &kp RPAR &kp QMARK   &none
+        &none   &kp CARET &kp FSLH  &kp ASTRK &kp BSLH  &none                           &trans &trans                                      &kp TILDE &kp DLLR  &kp LBRC &kp RBRC &kp AT      &none
+        &trans  &none     &none     &none     &none                       &trans &trans &trans &trans &trans &trans                                  &none     &none    &none    &none       &trans
+      >;
+    };
+    numfn {
+      bindings = <
+        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &trans                                                           &mo 3 &kp N6 &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp MINUS
+        &kp TAB   &kp F12     &kp F7    &kp F8    &kp F9      &kp T  &none                                                            &none &kp Y  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp BSLH
+        &kp ESC   &kp F11     &kp F4    &kp F5    &kp F6      &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &none &kp H  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &kp SQT
+        &kp LSHFT &kp F10     &kp F1    &kp F2   &kp F3      &kp B                            &kp HOME &kp PG_UP                           &kp N  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &kp RSHFT
+        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END  &kp PG_DN &kp ENTER &kp KP_N0              &kp UP     &kp DOWN     &kp KP_DOT    &kp RBKT        &mo 2
+      >;
+    };
+    left_bracket {
+          bindings = <
+            &trans    &trans       &trans      &trans      &trans        &trans    &trans                                                                          &trans                 &trans        &trans        &trans        &trans        &trans        &trans
+            &trans    &left_bracket_letter Q    &left_bracket_letter W   &left_bracket_letter E   &left_bracket_letter R     &left_bracket_letter T    &trans                                           &trans        &left_bracket_letter Y    &left_bracket_letter U    &left_bracket_letter I    &left_bracket_letter O    &left_bracket_letter P    &trans
+            &trans    &left_bracket_letter A    &left_bracket_letter S   &left_bracket_letter D   &left_bracket_letter F     &left_bracket_letter G    &trans    &trans &trans &trans &trans           &trans        &left_bracket_letter H    &left_bracket_letter J    &left_bracket_letter K    &left_bracket_letter L    &trans        &trans
+            &trans    &left_bracket_letter Z    &left_bracket_letter X   &left_bracket_letter C   &left_bracket_letter V     &left_bracket_letter B                        &trans &trans                             &left_bracket_letter N    &left_bracket_letter M    &trans        &trans        &trans        &trans
+            &trans    &trans       &trans      &trans      &trans                                &trans &trans &trans &trans &trans &trans                                              &trans        &trans        &trans        &trans        &trans
+          >;
+        };
+    right_bracket {
+      bindings = <
+        &trans    &trans       &trans      &trans      &trans        &trans    &trans                                                                          &trans                 &trans        &trans        &trans        &trans        &trans        &trans
+        &trans    &right_bracket_letter Q    &right_bracket_letter W   &right_bracket_letter E   &right_bracket_letter R     &right_bracket_letter T    &trans                                           &trans        &right_bracket_letter Y    &right_bracket_letter U    &right_bracket_letter I    &right_bracket_letter O    &right_bracket_letter P    &trans
+        &trans    &right_bracket_letter A    &right_bracket_letter S   &right_bracket_letter D   &right_bracket_letter F     &right_bracket_letter G    &trans    &trans &trans &trans &trans           &trans        &right_bracket_letter H    &right_bracket_letter J    &right_bracket_letter K    &right_bracket_letter L    &trans        &trans
+        &trans    &right_bracket_letter Z    &right_bracket_letter X   &right_bracket_letter C   &right_bracket_letter V     &right_bracket_letter B                        &trans &trans                             &right_bracket_letter N    &right_bracket_letter M    &trans        &trans        &trans        &trans
+        &trans    &trans       &trans      &trans      &trans                                &trans &trans &trans &trans &trans &trans                                              &trans        &trans        &trans        &trans        &trans
       >;
     };
   };

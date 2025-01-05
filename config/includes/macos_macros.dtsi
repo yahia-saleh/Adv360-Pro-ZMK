@@ -39,3 +39,17 @@ mac_redo: macos_redo {
           #binding-cells = <0>;
           bindings = <&kp LG(LC(SPACE))>;
       };
+
+      left_bracket_letter: left_bracket_letter {
+          compatible = "zmk,behavior-macro-one-param";
+          label = "LEFT_BRACKET_LETTER";
+          #binding-cells = <1>;
+          bindings = <&macro_press &kp LBKT>, <&macro_tap &kp MACRO_PARAM1>, <&macro_release &kp LBKT>;
+      };
+
+      right_bracket_letter: right_bracket_letter {
+          compatible = "zmk,behavior-macro-one-param";
+          label = "RIGHT_BRACKET_LETTER";
+          #binding-cells = <1>;
+          bindings = <&macro_press &kp RBKT>, <&macro_tap &kp MACRO_PARAM1>, <&macro_release &kp RBKT>;
+      };
