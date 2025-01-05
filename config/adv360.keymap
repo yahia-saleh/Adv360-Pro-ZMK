@@ -76,7 +76,7 @@
       bindings = <
         &none   &none     &none     &none     &none     &none    &trans                                                           &trans &none    &none     &none    &none    &none        &none
         &none   &kp SQT   &kp LT    &kp GT    &kp DQT   &kp DOT  &none                                                            &trans &kp AMPS &none     &kp LBKT &kp RBKT    &kp PERCENT  &none
-        &none   &kp EXCL  &kp minus &kp plus  &kp EQUAL &kp HASH &none           &trans &trans &trans &trans                      &none  &kp PIPE  &kp COLON &kp LPAR &kp RPAR &kp QMARK   &none
+        &none   &kp EXCL  &kp MINUS &kp PLUS  &kp EQUAL &kp HASH &none           &trans &trans &trans &trans                      &none  &kp PIPE  &kp COLON &kp LPAR &kp RPAR &kp QMARK   &none
         &none   &kp CARET &kp FSLH  &kp ASTRK &kp BSLH  &none                           &trans &trans                                      &kp TILDE &kp DLLR  &kp LBRC &kp RBRC &kp AT      &none
         &trans  &none     &none     &none     &none                       &trans &trans &trans &trans &trans &trans                                  &none     &none    &none    &none       &trans
       >;
