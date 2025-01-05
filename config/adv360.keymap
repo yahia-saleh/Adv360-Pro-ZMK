@@ -12,9 +12,12 @@
 / {
     behaviors {
       #include "macros.dtsi"
+      #include "version.dtsi"
+
+      #include "includes/settings.dtsi"
       #include "includes/mods.dtsi"
       #include "includes/macos_macros.dtsi"
-      #include "version.dtsi"
+
       #ifndef VERSION_MACRO
       macro_ver: macro_ver {
         compatible = "zmk,behavior-macro";
