@@ -53,3 +53,10 @@ mac_redo: macos_redo {
         #binding-cells = <1>;
         bindings = <&kp RBKT>, <&macro_param_1to1>, <&kp MACRO_PLACEHOLDER>;
     };
+
+    mac_lock: macos_lock {
+        compatible = "zmk,behavior-macro";
+        label = "MACOS_LOCK";
+        #binding-cells = <0>;
+        bindings = <&kp LG(LC(Q))>;
+    };

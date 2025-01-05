@@ -29,11 +29,11 @@
 
     default_layer {
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                                          &mo 3 &kp N6     &kp N7       &kp N8      &kp N9      &kp N0          &kp MINUS
+        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &none                                                                          &mo 3 &kp N6     &kp N7       &kp N8      &kp N9      &kp N0          &kp MINUS
         &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                           &none &kp Y      &kp U        &lt 7 I       &lt 8 O       &kp P           &kp BSLH
-        &kp ESC   &hml LCTRL A &hml LALT S  &hml LGUI D  &hmls LSHFT F  &hml MEH G  &none             &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL    &none &hmr MEH H &hmrs LSHFT J &hmr LGUI K &hmr LALT L  &hmr LCTRL SEMI &kp SQT
+        &kp ESC   &hml LCTRL A &hml LALT S  &hml LGUI D  &hml LSHFT F  &hml MEH G  &none             &sk LSHIFT &kp LALT &kp LGUI  &sk LSHIFT    &none &hmr MEH H &hmr LSHFT J &hmr LGUI K &hmr LALT L  &hmr LCTRL SEMI &kp SQT
         &kp LSHFT &kp Z       &kp X       &kp C        &kp V        &kp B                                       &kp HOME &kp PG_UP                               &kp N        &kp M       &kp COMMA    &kp DOT     &kp FSLH        &kp RSHFT
-        &mo 2     &kp GRAVE   &kp CAPS    &kp LEFT     &kp RIGHT                           &lt 4 BSPC &lt 5 DEL &kp END  &kp PG_DN &lt 5 ENTER &lt 6 SPACE                        &kp UP      &kp DOWN     &kp LBKT    &kp RBKT        &mo 2
+        &mo 2     &none   &none    &none     &none                           &lt 4 BSPC &lt 5 DEL &lt 9 END  &lt 9 PG_DN &lt 5 ENTER &lt 6 SPACE                        &none      &none     &none    &none        &mo 2
       >;
     };
     keypad {
@@ -47,7 +47,7 @@
     };
     fn {
       bindings = <
-        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &tog 1                                           &mo 3 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
+        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &none                                           &mo 3 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
         &trans &trans &trans &trans &trans &trans  &none                                           &none &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &none &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans                      &trans &trans                     &trans &trans &trans &trans  &trans  &trans
@@ -106,6 +106,15 @@
         &trans    &right_bracket_letter A    &right_bracket_letter S   &right_bracket_letter D   &right_bracket_letter F     &right_bracket_letter G    &trans    &trans &trans &trans &trans           &trans        &right_bracket_letter H    &right_bracket_letter J    &right_bracket_letter K    &right_bracket_letter L    &trans        &trans
         &trans    &right_bracket_letter Z    &right_bracket_letter X   &right_bracket_letter C   &right_bracket_letter V     &right_bracket_letter B                        &trans &trans                             &right_bracket_letter N    &right_bracket_letter M    &trans        &trans        &trans        &trans
         &trans    &trans       &trans      &trans      &trans                                &trans &trans &trans &trans &trans &trans                                              &trans        &trans        &trans        &trans        &trans
+      >;
+    };
+    media {
+      bindings = <
+        &none   &none     &none     &none     &none     &none    &trans                                                           &trans &none    &none     &none    &none    &none        &none
+        &none   &none   &none    &none    &none   &none  &none                                                            &trans &none &none     &none &none    &none  &none
+        &none   &none  &kp C_VOL_DN &kp C_VOL_UP  &mac_lock &kp C_MUTE &none           &trans &trans &trans &trans                      &none  &none  &none &none &none &none   &none
+        &none   &none &none  &none &none  &none                           &trans &trans                                      &none &none  &none &none &none      &none
+        &trans  &none     &none     &none     &none                       &trans &trans &trans &trans &trans &trans                                  &none     &none    &none    &none       &trans
       >;
     };
   };
