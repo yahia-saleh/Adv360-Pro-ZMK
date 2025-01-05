@@ -40,7 +40,20 @@ behaviors {
       flavor = "balanced";
       tapping-term-ms = <280>;
       quick-tap-ms = <175>;        // repeat on tap-into-hold
-      require-prior-idle-ms = <120>;
+      require-prior-idle-ms = <150>;
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <KEYS_R THUMBS_LEFT THUMBS_RIGHT>;
+      hold-trigger-on-release;
+    };
+
+    hmls: homerow_mods_left_shift {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HOMEROW_MODS_LEFT";
+      #binding-cells = <2>;
+      flavor = "balanced";
+      tapping-term-ms = <280>;
+      quick-tap-ms = <175>;        // repeat on tap-into-hold
+      require-prior-idle-ms = <0>;
       bindings = <&kp>, <&kp>;
       hold-trigger-key-positions = <KEYS_R THUMBS_LEFT THUMBS_RIGHT>;
       hold-trigger-on-release;
@@ -53,12 +66,24 @@ behaviors {
       flavor = "balanced";
       tapping-term-ms = <280>;
       quick-tap-ms = <175>;
-      require-prior-idle-ms = <120>;
+      require-prior-idle-ms = <150>;
       bindings = <&kp>, <&kp>;
       hold-trigger-key-positions = <KEYS_L THUMBS_LEFT THUMBS_RIGHT>;
       hold-trigger-on-release;
     };
 
+    hmrs: homerow_mods_right_shift {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HOMEROW_MODS_LEFT";
+      #binding-cells = <2>;
+      flavor = "balanced";
+      tapping-term-ms = <280>;
+      quick-tap-ms = <175>;        // repeat on tap-into-hold
+      require-prior-idle-ms = <0>;
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <KEYS_L THUMBS_LEFT THUMBS_RIGHT>;
+      hold-trigger-on-release;
+    };
 
     /*
      * Non-Positional Homerow Mods

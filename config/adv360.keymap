@@ -31,7 +31,7 @@
       bindings = <
         &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                                          &mo 3 &kp N6     &kp N7       &kp N8      &kp N9      &kp N0          &kp MINUS
         &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                           &none &kp Y      &kp U        &lt 7 I       &lt 8 O       &kp P           &kp BSLH
-        &kp ESC   &hml LCTRL A &hml LALT S  &hml LGUI D   &hml LSHFT F  &hml MEH G  &none             &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL    &none &hmr MEH H &hmr LSHFT J &hmr LGUI K &hmr LALT L  &hmr LCTRL SEMI &kp SQT
+        &kp ESC   &hml LCTRL A &hml LALT S  &hml LGUI D  &hmls LSHFT F  &hml MEH G  &none             &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL    &none &hmr MEH H &hmrs LSHFT J &hmr LGUI K &hmr LALT L  &hmr LCTRL SEMI &kp SQT
         &kp LSHFT &kp Z       &kp X       &kp C        &kp V        &kp B                                       &kp HOME &kp PG_UP                               &kp N        &kp M       &kp COMMA    &kp DOT     &kp FSLH        &kp RSHFT
         &mo 2     &kp GRAVE   &kp CAPS    &kp LEFT     &kp RIGHT                           &lt 4 BSPC &lt 5 DEL &kp END  &kp PG_DN &lt 5 ENTER &lt 6 SPACE                        &kp UP      &kp DOWN     &kp LBKT    &kp RBKT        &mo 2
       >;
