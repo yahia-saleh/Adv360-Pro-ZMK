@@ -7,6 +7,7 @@
 #define MEH LC(LS(LALT))
 
 // reference Folke's config here https://github.com/folke/zmk-config/blob/41a45d999742f2e523b5e9bfb9791846d4d24bea/config/base.keymap#L20
+// https://github.com/infused-kim/zmk-config/blob/chocofi/main/config/includes/behaviours_homerow_mods.dtsi
 
 / {
     behaviors {

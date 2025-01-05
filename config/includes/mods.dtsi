@@ -18,6 +18,10 @@
                      53       \
                      68 69 70 \
 
+#define HM_TAPPING_TERM 300
+#define HM_TAPPING_TERM_FAST 200
+#define HM_PRIOR_IDLE 200
+
 // Changed urob's require-prior-idle-ms from 150 to 120
 
 behaviors {
@@ -38,9 +42,9 @@ behaviors {
       label = "HOMEROW_MODS_LEFT";
       #binding-cells = <2>;
       flavor = "balanced";
-      tapping-term-ms = <280>;
-      quick-tap-ms = <175>;        // repeat on tap-into-hold
-      require-prior-idle-ms = <150>;
+      tapping-term-ms = <HM_TAPPING_TERM>;
+      quick-tap-ms = <HM_TAPPING_TERM_FAST>;        // repeat on tap-into-hold
+      require-prior-idle-ms = <HM_PRIOR_IDLE>;
       bindings = <&kp>, <&kp>;
       hold-trigger-key-positions = <KEYS_R THUMBS_LEFT THUMBS_RIGHT>;
       hold-trigger-on-release;
@@ -64,9 +68,9 @@ behaviors {
       label = "HOMEROW_MODS_RIGHT";
       #binding-cells = <2>;
       flavor = "balanced";
-      tapping-term-ms = <280>;
-      quick-tap-ms = <175>;
-      require-prior-idle-ms = <150>;
+      tapping-term-ms = <HM_TAPPING_TERM>;
+      quick-tap-ms = <HM_TAPPING_TERM_FAST>;        // repeat on tap-into-hold
+      require-prior-idle-ms = <HM_PRIOR_IDLE>;
       bindings = <&kp>, <&kp>;
       hold-trigger-key-positions = <KEYS_L THUMBS_LEFT THUMBS_RIGHT>;
       hold-trigger-on-release;
