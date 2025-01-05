@@ -91,14 +91,14 @@
       >;
     };
     left_bracket {
-          bindings = <
-            &trans    &trans       &trans      &trans      &trans        &trans    &trans                                                                          &trans                 &trans        &trans        &trans        &trans        &trans        &trans
-            &trans    &left_bracket_letter Q    &left_bracket_letter W   &left_bracket_letter E   &left_bracket_letter R     &left_bracket_letter T    &trans                                           &trans        &left_bracket_letter Y    &left_bracket_letter U    &left_bracket_letter I    &left_bracket_letter O    &left_bracket_letter P    &trans
-            &trans    &left_bracket_letter A    &left_bracket_letter S   &left_bracket_letter D   &left_bracket_letter F     &left_bracket_letter G    &trans    &trans &trans &trans &trans           &trans        &left_bracket_letter H    &left_bracket_letter J    &left_bracket_letter K    &left_bracket_letter L    &trans        &trans
-            &trans    &left_bracket_letter Z    &left_bracket_letter X   &left_bracket_letter C   &left_bracket_letter V     &left_bracket_letter B                        &trans &trans                             &left_bracket_letter N    &left_bracket_letter M    &trans        &trans        &trans        &trans
-            &trans    &trans       &trans      &trans      &trans                                &trans &trans &trans &trans &trans &trans                                              &trans        &trans        &trans        &trans        &trans
-          >;
-        };
+      bindings = <
+        &trans    &trans                    &trans                   &trans                   &trans                     &trans                    &trans                                                  &trans      &trans                    &trans                    &trans                    &trans                    &trans                    &trans
+        &trans    &left_bracket_letter Q    &left_bracket_letter W   &left_bracket_letter E   &left_bracket_letter R     &left_bracket_letter T    &trans                                                  &trans      &left_bracket_letter Y    &left_bracket_letter U    &left_bracket_letter I    &left_bracket_letter O    &left_bracket_letter P    &trans
+        &trans    &left_bracket_letter A    &left_bracket_letter S   &left_bracket_letter D   &left_bracket_letter F     &left_bracket_letter G    &trans       &trans &trans &trans &trans                &trans      &left_bracket_letter H    &left_bracket_letter J    &left_bracket_letter K    &left_bracket_letter L    &trans                    &trans
+        &trans    &left_bracket_letter Z    &left_bracket_letter X   &left_bracket_letter C   &left_bracket_letter V     &left_bracket_letter B                        &trans &trans                                   &left_bracket_letter N    &left_bracket_letter M    &trans                    &trans                    &trans                    &trans
+        &trans    &trans                    &trans                   &trans                   &trans                                                     &trans &trans &trans &trans &trans &trans                                               &trans                    &trans                    &trans                    &trans                    &trans
+      >;
+    };
     right_bracket {
       bindings = <
         &trans    &trans       &trans      &trans      &trans        &trans    &trans                                                                          &trans                 &trans        &trans        &trans        &trans        &trans        &trans
