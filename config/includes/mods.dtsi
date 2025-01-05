@@ -95,4 +95,3 @@ hmr: homerow_mods_right {
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <200>;
         };
-    };
