@@ -32,3 +32,10 @@ mac_redo: macos_redo {
           #binding-cells = <0>;
           bindings = <&kp LG(X)>;
       };
+
+         mac_emoji: macos_emoji_picker {
+              compatible = "zmk,behavior-macro";
+              label = "MACOS_EMOJI_PICKER";
+              #binding-cells = <0>;
+              bindings = <&kp LC(LG(SPACE))>;
+          };

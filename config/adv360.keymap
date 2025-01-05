@@ -63,8 +63,8 @@
       bindings = <
         &none   &none    &none   &none   &none   &none  &tog 1                                                           &trans &none &none &none    &none   &none   &none
         &none   &none    &none   &none   &none   &none  &none                                                            &trans &mac_redo  &mac_paste  &mac_copy     &mac_undo    &none    &none
-        &none   &trans   &trans  &trans  &trans  &none  &none           &trans &trans &trans &trans                      &none &kp LEFT  &kp DOWN  &kp UP &kp RIGHT &trans &trans
-        &none   &none    &none   &none   &none   &none                            &trans &trans                           &none  &none        &none    &none     &none       &none
+        &none   &trans   &trans  &trans  &trans  &none  &none           &trans &trans &trans &trans                      &none &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT    &caps_word   &kp DEL
+        &none   &none    &none   &none   &none   &none                            &trans &trans                          &none &kp INS   &kp HOME  &kp PG_UP  &kp PG_DOWN  &kp END      &mac_emoji
         &trans  &none    &none   &none   &none                 &trans  &trans   &trans  &trans &trans &trans              &none       &none     &none    &none       &trans
       >;
     };
