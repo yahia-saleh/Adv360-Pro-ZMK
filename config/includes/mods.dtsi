@@ -43,10 +43,23 @@ behaviors {
       #binding-cells = <2>;
       flavor = "balanced";
       tapping-term-ms = <HM_TAPPING_TERM>;
-      quick-tap-ms = <HM_TAPPING_TERM_FAST>;        // repeat on tap-into-hold
+      quick-tap-ms = <175>;        // repeat on tap-into-hold
       require-prior-idle-ms = <HM_PRIOR_IDLE>;
       bindings = <&kp>, <&kp>;
       hold-trigger-key-positions = <KEYS_R THUMBS_LEFT THUMBS_RIGHT>;
+      hold-trigger-on-release;
+    };
+
+    hmr: homerow_mods_right {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HOMEROW_MODS_RIGHT";
+      #binding-cells = <2>;
+      flavor = "balanced";
+      tapping-term-ms = <HM_TAPPING_TERM>;
+      quick-tap-ms = <175>;        // repeat on tap-into-hold
+      require-prior-idle-ms = <HM_PRIOR_IDLE>;
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <KEYS_L THUMBS_LEFT THUMBS_RIGHT>;
       hold-trigger-on-release;
     };
 
@@ -63,18 +76,6 @@ behaviors {
       hold-trigger-on-release;
     };
 
-    hmr: homerow_mods_right {
-      compatible = "zmk,behavior-hold-tap";
-      label = "HOMEROW_MODS_RIGHT";
-      #binding-cells = <2>;
-      flavor = "balanced";
-      tapping-term-ms = <HM_TAPPING_TERM>;
-      quick-tap-ms = <HM_TAPPING_TERM_FAST>;        // repeat on tap-into-hold
-      require-prior-idle-ms = <HM_PRIOR_IDLE>;
-      bindings = <&kp>, <&kp>;
-      hold-trigger-key-positions = <KEYS_L THUMBS_LEFT THUMBS_RIGHT>;
-      hold-trigger-on-release;
-    };
 
     hmrs: homerow_mods_right_shift {
       compatible = "zmk,behavior-hold-tap";
@@ -92,7 +93,7 @@ behaviors {
     /*
      * Non-Positional Homerow Mods
      * Used for &mm_grescm_gui behavior on left hand.
-     *
+     *150
      * Usage: &hm LSHFT T
      * Tap: T
      * Tap-Tap-Hold: Repeat T
