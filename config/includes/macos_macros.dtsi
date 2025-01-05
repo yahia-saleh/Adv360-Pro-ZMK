@@ -1,4 +1,3 @@
-behaviors {
 mac_redo: macos_redo {
           compatible = "zmk,behavior-macro";
           label = "MACOS_REDO";
@@ -33,4 +32,3 @@ mac_redo: macos_redo {
           #binding-cells = <0>;
           bindings = <&kp LG(X)>;
       };
-};
