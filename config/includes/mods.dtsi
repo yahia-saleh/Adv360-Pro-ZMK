@@ -44,7 +44,7 @@ hmr: homerow_mods_right {
     require-prior-idle-ms = <HM_PRIOR_IDLE>;
 
     hold-trigger-key-positions = <KEYS_L THUMBS_LEFT>;
-    hold-trigger-on-release;200
+    hold-trigger-on-release;
 };
 
         // Positional Homerow mods for shift
