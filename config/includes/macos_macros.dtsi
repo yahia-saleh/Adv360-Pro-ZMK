@@ -60,3 +60,12 @@ mac_redo: macos_redo {
         #binding-cells = <0>;
         bindings = <&kp LG(LC(Q))>;
     };
+
+  skq: sticky_key_quick_release {
+    compatible = "zmk,behavior-sticky-key";
+    #binding-cells = <1>;
+    bindings = <&kp>;
+    release-after-ms = <1000>;
+    quick-release;
+    ignore-modifiers;
+  };
