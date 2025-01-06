@@ -6,7 +6,7 @@
 #define HM_TAPPING_TERM 300
 #define HM_TAPPING_TERM_FAST 200
 #define HM_PRIOR_IDLE 150
-#define HM_PRIOR_IDLE_FAST 100
+#define HM_PRIOR_IDLE_FAST 50
 
 // Positional Homerow mods
 // Homerow mods that prevent accidental activations when rolling keys,
