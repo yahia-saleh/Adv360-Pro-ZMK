@@ -60,7 +60,7 @@ hmr: homerow_mods_right {
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
 
             hold-trigger-key-positions = <KEYS_R THUMBS_RIGHT>;
-            // hold-trigger-on-release;
+            hold-trigger-on-release;
         };
 
         hm_shift_r: hm_shift_r {
@@ -74,7 +74,7 @@ hmr: homerow_mods_right {
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
 
             hold-trigger-key-positions = <KEYS_L THUMBS_LEFT>;
-            // hold-trigger-on-release;
+            hold-trigger-on-release;
         };
 
         /*
