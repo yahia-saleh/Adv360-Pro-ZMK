@@ -6,6 +6,7 @@
 #define HM_TAPPING_TERM 300
 #define HM_TAPPING_TERM_FAST 200
 #define HM_PRIOR_IDLE 150
+#define HM_PRIOR_IDLE_FAST 125
 
 // Positional Homerow mods
 // Homerow mods that prevent accidental activations when rolling keys,
@@ -43,7 +44,7 @@ hmr: homerow_mods_right {
     require-prior-idle-ms = <HM_PRIOR_IDLE>;
 
     hold-trigger-key-positions = <KEYS_L THUMBS_LEFT>;
-    hold-trigger-on-release;
+    hold-trigger-on-release;200
 };
 
         // Positional Homerow mods for shift
@@ -57,7 +58,7 @@ hmr: homerow_mods_right {
             flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM_FAST>;
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+            require-prior-idle-ms = <HM_PRIOR_IDLE_FAST>;
 
             hold-trigger-key-positions = <KEYS_R THUMBS_RIGHT>;
             hold-trigger-on-release;
@@ -71,7 +72,7 @@ hmr: homerow_mods_right {
             flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM_FAST>;
             quick-tap-ms = <175>;
-            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+            require-prior-idle-ms = <HM_PRIOR_IDLE_FAST>;
 
             hold-trigger-key-positions = <KEYS_L THUMBS_LEFT>;
             hold-trigger-on-release;
