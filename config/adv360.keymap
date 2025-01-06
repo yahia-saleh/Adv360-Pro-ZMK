@@ -35,11 +35,11 @@
 
     default_layer {
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &none                                                                          &mo 3 &kp N6     &kp N7       &kp N8      &kp N9      &kp N0          &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                           &none &kp Y      &kp U        &lt 7 I       &lt 8 O       &kp P           &kp BSLH
-        &kp ESC   &hml LCTRL A &hml LALT S  &hml LGUI D  &hm_shift_l LSHFT F  &hml MEH G  &none             &sk LSHIFT &kp LALT &kp LGUI  &sk LSHIFT    &none &hmr MEH H &hm_shift_r LSHFT J &hmr LGUI K &hmr LALT L  &hmr LCTRL SEMI &kp SQT
-        &kp GRAVE &kp Z       &kp X       &kp C        &kp V        &kp B                                       &kp HOME &kp PG_UP                               &kp N        &kp M       &kp COMMA    &kp DOT     &kp FSLH        &kp RSHFT
-        &mo 2     &none   &none    &none     &none                           &lt 4 BSPC &lt 5 DEL &lt 9 END  &lt 9 PG_DN &lt 5 ENTER &lt 6 SPACE                        &none      &none     &none    &none        &mo 2
+        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &none                                                                                                   &mo 3   &kp N6      &kp N7                  &kp N8          &kp N9          &kp N0          &kp MINUS
+        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                                                   &none   &kp Y       &kp U                   &lt 7 I         &lt 8 O         &kp P           &kp BSLH
+        &kp ESC   &hml LCTRL A &hml LALT S  &hml LGUI D  &hm_shift_l LSHFT F  &hml MEH G  &none            &sk LSHIFT &kp LALT   &kp LGUI    &sk LSHIFT                 &none   &hmr MEH H  &hm_shift_r LSHFT J     &hmr LGUI K     &hmr LALT L     &hmr LCTRL SEMI &kp SQT
+        &sk LSHIFT &kp Z       &kp X       &kp C        &kp V        &kp B                                             &kp HOME   &kp PG_UP                                      &kp N       &kp M                   &kp COMMA       &kp DOT         &kp FSLH        &sk RSHFT
+        &mo 2     &none   &none    &none     &none                                             &lt 4 BSPC  &lt 5 DEL  &lt 9 END  &lt 9 PG_DN &lt 5 ENTER &lt 6 SPACE                         &none                   &none           &none           &none           &mo 2
       >;
     };
     keypad {
@@ -81,7 +81,7 @@
     sym {
       bindings = <
         &none   &none     &none     &none     &none     &none    &trans                                                           &trans &none    &none     &none    &none    &none        &none
-        &none   &kp SQT   &kp LT    &kp GT    &kp DQT   &kp DOT  &none                                                            &trans &kp AMPS &none     &kp LBKT &kp RBKT    &kp PERCENT  &none
+        &kp GRAVE   &kp SQT   &kp LT    &kp GT    &kp DQT   &kp DOT  &none                                                            &trans &kp AMPS &none     &kp LBKT &kp RBKT    &kp PERCENT  &none
         &none   &kp EXCL  &kp MINUS &kp PLUS  &kp EQUAL &kp HASH &none           &trans &trans &trans &trans                      &none  &kp PIPE  &kp COLON &kp LPAR &kp RPAR &kp QMARK   &none
         &none   &kp CARET &kp FSLH  &kp ASTRK &kp BSLH  &none                           &trans &trans                                      &kp TILDE &kp DLLR  &kp LBRC &kp RBRC &kp AT      &none
         &trans  &none     &none     &none     &none                       &trans &trans &trans &trans &trans &trans                                  &none     &none    &none    &none       &trans
