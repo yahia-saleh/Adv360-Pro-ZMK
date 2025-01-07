@@ -13,16 +13,6 @@
 // https://github.com/infused-kim/zmk-config/blob/chocofi/main/config/includes/behaviours_homerow_mods.dtsi
 
 / {
-    combos {
-        compatible = "zmk,combos";
-        combo_double_shift {
-            timeout-ms = <50>;
-            key-positions = <30 43>; // S and L keys
-            bindings = <&kp LSHIFT &kp LSHIFT>; // Double tap shift
-            layers = <0>; // Only active in default layer
-        };
-    };
-
     behaviors {
       #include "macros.dtsi"
       #include "version.dtsi"
@@ -47,8 +37,8 @@
       bindings = <
         &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &none                                                                                                   &mo 3   &kp N6      &kp N7                  &kp N8          &kp N9          &kp N0          &kp MINUS
         &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                                                   &none   &kp Y       &kp U                   &lt 7 I         &lt 8 O         &kp P           &kp BSLH
-        &kp ESC   &hml LCTRL A &hml LALT S  &hml LGUI D  &hm_shift_l LSHFT F  &hml MEH G  &none            &sk LSHIFT &kp LALT   &kp LGUI    &sk LSHIFT                 &none   &hmr MEH H  &hm_shift_r LSHFT J     &hmr LGUI K     &hmr LALT L     &hmr LCTRL SEMI &kp SQT
-        &sk LSHIFT &kp Z       &kp X       &kp C        &kp V        &kp B                                             &kp HOME   &kp PG_UP                                      &kp N       &kp M                   &kp COMMA       &kp DOT         &kp FSLH        &sk RSHFT
+        &kp ESC   &hml LCTRL A &hml LALT S  &hml LGUI D  &hm_shift_l LSHFT F  &hml MEH G  &none            &kp LSHIFT &kp LALT   &kp LGUI    &kp LSHIFT                 &none   &hmr MEH H  &hm_shift_r LSHFT J     &hmr LGUI K     &hmr LALT L     &hmr LCTRL SEMI &kp SQT;
+        &sqk LSHIFT &kp Z       &kp X       &kp C        &kp V        &kp B                                             &kp HOME   &kp PG_UP                                      &kp N       &kp M                   &kp COMMA       &kp DOT         &kp FSLH        &sqk RSHFT
         &mo 2     &none   &none    &none     &none                                             &lt 4 BSPC  &lt 5 DEL  &lt 9 END  &lt 9 PG_DN &lt 5 ENTER &lt 6 SPACE                         &none                   &none           &none           &none           &mo 2
       >;
     };
@@ -57,7 +47,7 @@
         &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &trans                                                           &mo 3 &kp N6 &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp MINUS
         &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                            &none &kp Y  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp BSLH
         &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &none &kp H  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &kp SQT
-        &skq LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp PG_UP                           &kp N  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &skq RSHFT
+        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp PG_UP                           &kp N  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &kp RSHFT
         &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END  &kp PG_DN &kp ENTER &kp KP_N0              &kp UP     &kp DOWN     &kp KP_DOT    &kp RBKT        &mo 2
       >;
     };
