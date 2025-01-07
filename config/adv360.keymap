@@ -13,6 +13,16 @@
 // https://github.com/infused-kim/zmk-config/blob/chocofi/main/config/includes/behaviours_homerow_mods.dtsi
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_double_shift {
+            timeout-ms = <50>;
+            key-positions = <30 43>; // S and L keys
+            bindings = <&kp LSHIFT &kp LSHIFT>; // Double tap shift
+            layers = <0>; // Only active in default layer
+        };
+    };
+
     behaviors {
       #include "macros.dtsi"
       #include "version.dtsi"
