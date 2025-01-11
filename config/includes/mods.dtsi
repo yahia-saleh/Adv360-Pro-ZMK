@@ -8,6 +8,11 @@
 #define HM_PRIOR_IDLE 150
 #define HM_PRIOR_IDLE_FAST 100
 
+// Based on Sunaku's settings
+#define SHIFT_TAPPING_TERM 170     // Faster than regular homerow mods
+#define SHIFT_QUICK_TAP 150        // Allow quick repeat taps
+#define SHIFT_PRIOR_IDLE 120       // Shorter idle requirement for shifts
+
 // Positional Homerow mods
 // Homerow mods that prevent accidental activations when rolling keys,
 // such as when typing `st` or `ne` on colemak-dh layouts or `as` on
@@ -47,52 +52,49 @@ hmr: homerow_mods_right {
     hold-trigger-on-release;
 };
 
-        // Positional Homerow mods for shift
-        // Use faster tapping term and disable some features that may
-        // cause false negatives.
-        hm_shift_l: hm_shift_l {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
+hm_shift_l: hm_shift_l {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    bindings = <&kp>, <&kp>;
+    
+    flavor = "tap-preferred";      // Sunaku uses tap-preferred for shifts
+    tapping-term-ms = <SHIFT_TAPPING_TERM>;
+    quick-tap-ms = <SHIFT_QUICK_TAP>;
+    require-prior-idle-ms = <SHIFT_PRIOR_IDLE>;
+    
+    hold-trigger-key-positions = <KEYS_R THUMBS_RIGHT>;
+    hold-trigger-on-release;       // Wait for other home row mods
+};
 
-            flavor = "balanced";
-            tapping-term-ms = <HM_TAPPING_TERM_FAST>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <HM_PRIOR_IDLE_FAST>;
+hm_shift_r: hm_shift_r {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    bindings = <&kp>, <&kp>;
+    
+    flavor = "tap-preferred";      // Tap-preferred for more responsive typing
+    tapping-term-ms = <SHIFT_TAPPING_TERM>;
+    quick-tap-ms = <SHIFT_QUICK_TAP>;
+    require-prior-idle-ms = <SHIFT_PRIOR_IDLE>;
+    
+    hold-trigger-key-positions = <KEYS_L THUMBS_LEFT>;
+    hold-trigger-on-release;       // Wait for other home row mods
+};
 
-            hold-trigger-key-positions = <KEYS_R THUMBS_RIGHT>;
-            hold-trigger-on-release;
-        };
+/*
+  * Non-Positional Homerow Mods
+  * Used for &mm_grescm_gui behavior on left hand.
+  *
+  * Usage: &hm LSHFT T
+  * Tap: T
+  * Tap-Tap-Hold: Repeat T
+  * Hold: LSHIFT
+  */
+hm: homerow_mods {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    bindings = <&kp>, <&kp>;
 
-        hm_shift_r: hm_shift_r {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-
-            flavor = "balanced";
-            tapping-term-ms = <HM_TAPPING_TERM_FAST>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <HM_PRIOR_IDLE_FAST>;
-
-            hold-trigger-key-positions = <KEYS_L THUMBS_LEFT>;
-            hold-trigger-on-release;
-        };
-
-        /*
-         * Non-Positional Homerow Mods
-         * Used for &mm_grescm_gui behavior on left hand.
-         *
-         * Usage: &hm LSHFT T
-         * Tap: T
-         * Tap-Tap-Hold: Repeat T
-         * Hold: LSHIFT
-         */
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-
-            flavor = "balanced";
-            tapping-term-ms = <HM_TAPPING_TERM>;
-            quick-tap-ms = <200>;
-        };
+    flavor = "balanced";
+    tapping-term-ms = <HM_TAPPING_TERM>;
+    quick-tap-ms = <200>;
+};
