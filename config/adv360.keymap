@@ -7,6 +7,19 @@
 // personal includes
 #include "includes/settings.dtsi"
 
+// layers
+#define LAYER_BASE 0
+#define LAYER_KEYPAD 1
+#define LAYER_FN 2
+#define LAYER_MOD 3
+#define LAYER_NAV 4
+#define LAYER_SYM 5
+#define LAYER_NUMFN 6
+#define LAYER_LEFT_BRACKET 7
+#define LAYER_RIGHT_BRACKET 8
+#define LAYER_MEDIA 9
+#define LAYER_SUNAKU_SYM 10
+
 #define MEH LC(LS(LALT))
 
 // reference Folke's config here https://github.com/folke/zmk-config/blob/41a45d999742f2e523b5e9bfb9791846d4d24bea/config/base.keymap#L20
@@ -35,22 +48,22 @@
 
     default_layer {
       bindings = <
-//    ┌───────────┬─────────────┬─────────────┬─────────────┬────────────────────┬────────────┬─────┐                                                                                                   ┌──────┬────────────┬────────────────────┬─────────────┬─────────────┬─────────────┬───────────┐
-//    │     =     │      1      │      2      │      3      │         4          │     5      │     │                                                                                                   │ mo 3 │     6      │         7          │      8      │      9      │      0      │     -     │
-//    ├───────────┼─────────────┼─────────────┼─────────────┼────────────────────┼────────────┼─────┤                                                                                                   ├──────┼────────────┼────────────────────┼─────────────┼─────────────┼─────────────┼───────────┤
-//    │    tab    │      Q      │      W      │      E      │         R          │     T      │     │                                                                                                   │      │     Y      │         U          │   lt 7 I    │   lt 8 O    │      P      │     \     │
-//    ├───────────┼─────────────┼─────────────┼─────────────┼────────────────────┼────────────┼─────┤                       ┌──────────┬──────────┐       ┌───────────┬──────────┐                      ├──────┼────────────┼────────────────────┼─────────────┼─────────────┼─────────────┼───────────┤
-//    │    esc    │ &hml lctl A │ &hml lalt S │ &hml lgui D │ &hm_shift_l lsft F │ &hml MEH G │     │                       │   lsft   │   lalt   │       │   lgui    │   lsft   │                      │      │ &hmr MEH H │ &hm_shift_r lsft J │ &hmr lgui K │ &hmr lalt L │ &hmr lctl ; │     '     │
-//    ├───────────┼─────────────┼─────────────┼─────────────┼────────────────────┼────────────┼─────┘                       └──────────┼──────────┤       ├───────────┼──────────┘                      └──────┼────────────┼────────────────────┼─────────────┼─────────────┼─────────────┼───────────┤
-//    │ &skq lsft │      Z      │      X      │      C      │         V          │     B      │                                        │   home   │       │   pgup    │                                        │     N      │         M          │      ,      │      .      │      /      │ &skq rsft │
-//    ├───────────┼─────────────┼─────────────┼─────────────┼────────────────────┼────────────┘                 ┌───────────┬──────────┼──────────┤       ├───────────┼──────────┬──────────┐                  └────────────┼────────────────────┼─────────────┼─────────────┼─────────────┼───────────┤
-//    │   mo 2    │             │             │             │                    │                              │ lt 4 bspc │ lt 5 del │ lt 9 end │       │ lt 9 pgdn │ lt 5 ent │ lt 6 spc │                               │                    │             │             │             │   mo 2    │
-//    └───────────┴─────────────┴─────────────┴─────────────┴────────────────────┘                              └───────────┴──────────┴──────────┘       └───────────┴──────────┴──────────┘                               └────────────────────┴─────────────┴─────────────┴─────────────┴───────────┘
-  &kp EQUAL     &kp N1         &kp N2        &kp N3        &kp N4                &kp N5       &none                                                                                                                   &mo 3   &kp N6       &kp N7                &kp N8        &kp N9        &kp N0            &kp MINUS
-  &kp TAB       &kp Q          &kp W         &kp E         &kp R                 &kp T        &none                                                                                                                   &none   &kp Y        &kp U                 &lt 7 I       &lt 8 O       &kp P             &kp BSLH
-  &kp ESC       &hml LCTRL A   &hml LALT S   &hml LGUI D   &hm_shift_l LSHFT F   &hml MEH G   &none                            &kp LSHIFT   &kp LALT            &kp LGUI      &kp LSHIFT                              &none   &hmr MEH H   &hm_shift_r LSHFT J   &hmr LGUI K   &hmr LALT L   &hmr LCTRL SEMI   &kp SQT
-  &skq LSHIFT   &kp Z          &kp X         &kp C         &kp V                 &kp B                                                      &kp HOME            &kp PG_UP                                                     &kp N        &kp M                 &kp COMMA     &kp DOT       &kp FSLH          &skq RSHFT
-  &mo 2         &none          &none         &none         &none                                                  &lt 4 BSPC   &lt 5 DEL    &lt 9 END           &lt 9 PG_DN   &lt 5 ENTER   &lt 6 SPACE                                    &none                 &none         &none         &none             &mo 2
+//    ┌───────────────────┬────────────────┬─────────────┬─────────────┬────────────────────┬────────────┬─────┐                                                                                                                                                              ┌──────┬────────────┬────────────────────┬────────────────┬────────────────┬────────────────┬───────────────────┐
+//    │         =         │ lt laltYER_[ 1 │      2      │      3      │   lt laltYER_] 4   │     5      │     │                                                                                                                                                              │ mo 3 │     6      │   lt laltYER_[ 7   │       8        │       9        │ lt laltYER_] 0 │         -         │
+//    ├───────────────────┼────────────────┼─────────────┼─────────────┼────────────────────┼────────────┼─────┤                                                                                                                                                              ├──────┼────────────┼────────────────────┼────────────────┼────────────────┼────────────────┼───────────────────┤
+//    │        tab        │       Q        │      W      │      E      │         R          │     T      │     │                                                                                                                                                              │      │     Y      │         U          │ lt laltYER_[ I │ lt laltYER_] O │       P        │         \         │
+//    ├───────────────────┼────────────────┼─────────────┼─────────────┼────────────────────┼────────────┼─────┤                                 ┌──────┬──────────────────────┐       ┌───────────────────────┬──────────────────────┐                                       ├──────┼────────────┼────────────────────┼────────────────┼────────────────┼────────────────┼───────────────────┤
+//    │        esc        │  &hml lctl A   │ &hml lalt S │ &hml lgui D │ &hm_shift_l lsft F │ &hml MEH G │     │                                 │ lsft │         lalt         │       │         lgui          │         lsft         │                                       │      │ &hmr MEH H │ &hm_shift_r lsft J │  &hmr lgui K   │  &hmr lalt L   │  &hmr lctl ;   │         '         │
+//    ├───────────────────┼────────────────┼─────────────┼─────────────┼────────────────────┼────────────┼─────┘                                 └──────┼──────────────────────┤       ├───────────────────────┼──────────────────────┘                                       └──────┼────────────┼────────────────────┼────────────────┼────────────────┼────────────────┼───────────────────┤
+//    │ &smart_shift lsft │       Z        │      X      │      C      │         V          │     B      │                                              │         home         │       │         pgup          │                                                                     │     N      │         M          │       ,        │       .        │       /        │ &smart_shift rsft │
+//    ├───────────────────┼────────────────┼─────────────┼─────────────┼────────────────────┼────────────┘                 ┌─────────────────────┬──────┼──────────────────────┤       ├───────────────────────┼──────────────────────┬───────────────────────────┐                  └────────────┼────────────────────┼────────────────┼────────────────┼────────────────┼───────────────────┤
+//    │       mo 2        │                │             │             │                    │                              │ lt laltYER_NAV bspc │ del  │ lt laltYER_MEDIA end │       │ lt laltYER_MEDIA pgdn │ lt laltYER_NUMFN ent │ lt laltYER_SUNAKU_SYM spc │                               │                    │                │                │                │       mo 2        │
+//    └───────────────────┴────────────────┴─────────────┴─────────────┴────────────────────┘                              └─────────────────────┴──────┴──────────────────────┘       └───────────────────────┴──────────────────────┴───────────────────────────┘                               └────────────────────┴────────────────┴────────────────┴────────────────┴───────────────────┘
+  &kp EQUAL             &lt LAYER_LEFT_BRACKET N1   &kp N2        &kp N3        &lt LAYER_RIGHT_BRACKET N4   &kp N5       &none                                                                                                                                                                        &mo 3   &kp N6       &lt LAYER_LEFT_BRACKET N7   &kp N8                     &kp N9                      &lt LAYER_RIGHT_BRACKET N0   &kp MINUS
+  &kp TAB               &kp Q                       &kp W         &kp E         &kp R                        &kp T        &none                                                                                                                                                                        &none   &kp Y        &kp U                       &lt LAYER_LEFT_BRACKET I   &lt LAYER_RIGHT_BRACKET O   &kp P                        &kp BSLH
+  &kp ESC               &hml LCTRL A                &hml LALT S   &hml LGUI D   &hm_shift_l LSHFT F          &hml MEH G   &none                                    &kp LSHIFT   &kp LALT                      &kp LGUI                &kp LSHIFT                                                       &none   &hmr MEH H   &hm_shift_r LSHFT J         &hmr LGUI K                &hmr LALT L                 &hmr LCTRL SEMI              &kp SQT
+  &smart_shift LSHIFT   &kp Z                       &kp X         &kp C         &kp V                        &kp B                                                              &kp HOME                      &kp PG_UP                                                                                        &kp N        &kp M                       &kp COMMA                  &kp DOT                     &kp FSLH                     &smart_shift RSHFT
+  &mo 2                 &none                       &none         &none         &none                                                         &lt LAYER_NAV BSPC   &kp DEL      &lt LAYER_MEDIA END           &lt LAYER_MEDIA PG_DN   &lt LAYER_NUMFN ENTER   &lt LAYER_SUNAKU_SYM SPACE                                    &none                       &none                      &none                       &none                        &mo 2
       >;
     };
     keypad {
@@ -231,6 +244,26 @@
   &none    &none   &kp C_VOL_DN   &kp C_VOL_UP   &mac_lock   &kp C_MUTE   &none                         &trans   &trans           &trans   &trans                        &none    &none   &none   &none   &none   &none   &none
   &none    &none   &none          &none          &none       &none                                               &trans           &trans                                          &none   &none   &none   &none   &none   &none
   &trans   &none   &none          &none          &none                                         &trans   &trans   &trans           &trans   &trans   &trans                                &none   &none   &none   &none   &trans
+      >;
+    };
+    sunaku_sym {
+      bindings = <
+//    ┌─────┬───┬───┬───┬───┬───┬─────┐                                                             ┌─────┬─────┬──────┬──────┬─────┬──────┬──────┐
+//    │  `  │ [ │ ( │ ) │ ] │ . │     │                                                             │     │     │      │      │     │      │      │
+//    ├─────┼───┼───┼───┼───┼───┼─────┤                                                             ├─────┼─────┼──────┼──────┼─────┼──────┼──────┤
+//    │  !  │ , │ { │ } │ ; │ ? │     │                                                             │     │  `  │ left │ down │ up  │ rght │ home │
+//    ├─────┼───┼───┼───┼───┼───┼─────┤               ┌───┬───┐       ┌─────┬─────┐                 ├─────┼─────┼──────┼──────┼─────┼──────┼──────┤
+//    │  #  │ ^ │ = │ _ │ $ │ * │     │               │ \ │ . │       │  *  │     │                 │     │  "  │ bspc │ tab  │ spc │ ent  │ end  │
+//    ├─────┼───┼───┼───┼───┼───┼─────┘               └───┼───┤       ├─────┼─────┘                 └─────┼─────┼──────┼──────┼─────┼──────┼──────┤
+//    │  ~  │ < │ | │ - │ > │ / │                         │ * │       │     │                             │  '  │ del  │      │     │      │      │
+//    ├─────┼───┼───┼───┼───┼───┘                 ┌───┬───┼───┤       ├─────┼─────┬─────┐                 └─────┼──────┼──────┼─────┼──────┼──────┤
+//    │     │ & │ ' │ " │ + │                     │ % │ : │ @ │       │     │     │     │                       │      │      │     │      │      │
+//    └─────┴───┴───┴───┴───┘                     └───┴───┴───┘       └─────┴─────┴─────┘                       └──────┴──────┴─────┴──────┴──────┘
+  &kp GRAVE   &kp LEFT_BRACKET   &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS   &kp RIGHT_BRACKET   &kp DOT        &none                                                                                                             &trans   &none               &none            &none            &none          &none             &none
+  &kp EXCL    &kp COMMA          &kp LEFT_BRACE         &kp RIGHT_BRACE         &kp SEMI            &kp QUESTION   &none                                                                                                             &trans   &kp GRAVE           &kp LEFT_ARROW   &kp DOWN_ARROW   &kp UP_ARROW   &kp RIGHT_ARROW   &kp HOME
+  &kp HASH    &kp CARET          &kp EQUAL              &kp UNDERSCORE          &kp DOLLAR          &kp ASTRK      &none                             &kp BACKSLASH   &kp DOT               &kp ASTRK   &trans                        &trans   &kp DOUBLE_QUOTES   &kp BACKSPACE    &kp TAB          &kp SPACE      &kp ENTER         &kp END
+  &kp TILDE   &kp LESS_THAN      &kp PIPE               &kp MINUS               &kp GREATER_THAN    &kp SLASH                                                        &kp ASTRK             &trans                                             &kp SINGLE_QUOTE    &kp DEL          &none            &none          &none             &none
+  &trans      &kp AMPS           &kp SINGLE_QUOTE       &kp DOUBLE_QUOTES       &kp PLUS                                               &kp PERCENT   &kp COLON       &kp AT_SIGN           &trans      &trans   &trans                                            &none            &none            &none          &none             &trans
       >;
     };
   };

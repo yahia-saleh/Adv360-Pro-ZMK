@@ -61,11 +61,19 @@ mac_redo: macos_redo {
         bindings = <&kp LG(LC(Q))>;
     };
 
-  skq: sticky_key_quick_release {
-    compatible = "zmk,behavior-sticky-key";
-    #binding-cells = <1>;
-    bindings = <&kp>;
-    release-after-ms = <1000>;
-    quick-release;
-    ignore-modifiers;
-  };
+    skq: sticky_key_quick_release {
+      compatible = "zmk,behavior-sticky-key";
+      #binding-cells = <1>;
+      bindings = <&kp>;
+      release-after-ms = <1000>;
+      quick-release;
+      ignore-modifiers;
+    };
+
+    smart_shift: smart_shift {
+        compatible = "zmk,behavior-tap-dance";
+        label = "STICKY_KEY_CAPS";
+        #binding-cells = <1>;
+        tapping-term-ms = <200>;
+        bindings = <&sk>, <&caps_word>;
+    };
