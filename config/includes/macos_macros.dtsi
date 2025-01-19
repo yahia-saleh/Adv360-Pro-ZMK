@@ -71,9 +71,8 @@ mac_redo: macos_redo {
     };
 
     smart_shift: smart_shift {
-        compatible = "zmk,behavior-tap-dance";
-        label = "STICKY_KEY_CAPS";
-        #binding-cells = <1>;
-        tapping-term-ms = <200>;
-        bindings = <&sk>, <&caps_word>;
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&sk LSHFT>, <&caps_word>;
+        mods = <(MOD_LSFT)>;
     };
