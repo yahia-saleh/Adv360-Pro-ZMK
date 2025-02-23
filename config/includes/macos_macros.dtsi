@@ -73,6 +73,6 @@ mac_redo: macos_redo {
     smart_shift: smart_shift_macro {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&sk LSHFT>, <&caps_word>;
+      bindings = <&skq LSHFT>, <&caps_word>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };

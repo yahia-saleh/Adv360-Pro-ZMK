@@ -53,21 +53,31 @@ hmr: homerow_mods_right {
 // Use faster tapping term and disable some features that may
 // cause false negatives.
 hm_shift_l: hm_shift_l {
-    compatible = "zmk,behavior-sticky-key";
-    label = "STICKY_KEY_QUICK_RELEASE";
-    #binding-cells = <1>;
-    bindings = <&kp>;
-    release-after-ms = <1000>;
-    quick-release;
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    bindings = <&kp>, <&kp>;
+
+    flavor = "balanced";
+    tapping-term-ms = <HM_TAPPING_TERM_FAST>;
+    quick-tap-ms = <175>;
+    require-prior-idle-ms = <HM_PRIOR_IDLE_FAST>;
+
+    hold-trigger-key-positions = <KEYS_R THUMBS_RIGHT>;
+    hold-trigger-on-release;
 };
 
 hm_shift_r: hm_shift_r {
-    compatible = "zmk,behavior-sticky-key";
-    label = "STICKY_KEY_QUICK_RELEASE";
-    #binding-cells = <1>;
-    bindings = <&kp>;
-    release-after-ms = <1000>;
-    quick-release;
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    bindings = <&kp>, <&kp>;
+
+    flavor = "balanced";
+    tapping-term-ms = <HM_TAPPING_TERM_FAST>;
+    quick-tap-ms = <175>;
+    require-prior-idle-ms = <HM_PRIOR_IDLE_FAST>;
+
+    hold-trigger-key-positions = <KEYS_L THUMBS_LEFT>;
+    hold-trigger-on-release;
 };
 
 /*
