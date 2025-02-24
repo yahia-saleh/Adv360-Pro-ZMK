@@ -8,8 +8,6 @@
 #define HM_PRIOR_IDLE 150
 #define HM_PRIOR_IDLE_FAST 100
 
-
-
 // Positional Homerow mods
 // Homerow mods that prevent accidental activations when rolling keys,
 // such as when typing `st` or `ne` on colemak-dh layouts or `as` on
