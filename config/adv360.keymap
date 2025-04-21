@@ -35,15 +35,16 @@
       #include "includes/mods.dtsi"
       #include "includes/macos_macros.dtsi"
       
-      hm: homerow_mods {
-          compatible = "zmk,behavior-hold-tap";
-          label = "HOMEROW_MODS";
-          #binding-cells = <2>;
-          tapping-term-ms = <200>;
-          quick_tap_ms = <175>;
-          flavor = "tap-preferred";
-          bindings = <&kp>, <&kp>;
-      };
+      // This homerow mods definition came with the firmware update in Feb 2025. Keeping for reference for now
+      //hm: homerow_mods {
+          //compatible = "zmk,behavior-hold-tap";
+          //label = "HOMEROW_MODS";
+          //#binding-cells = <2>;
+          //tapping-term-ms = <200>;
+          //quick_tap_ms = <175>;
+          //flavor = "tap-preferred";
+          //bindings = <&kp>, <&kp>;
+      //};
     };
 
   keymap {
