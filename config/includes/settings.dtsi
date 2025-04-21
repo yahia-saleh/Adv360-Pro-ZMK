@@ -18,8 +18,10 @@
     // Also prevent mod presses from cancelling caps word.
     continue-list = <
       UNDERSCORE MINUS
-      LCTRL LALT LGUI LSHFT
-      RCTRL RALT RGUI RSHFT
+      //LCTRL LALT LGUI LSHFT
+      LCTRL LALT LGUI 
+      //RCTRL RALT RGUI RSHFT
+      RCTRL RALT RGUI 
       BACKSPACE
     >;
     #ifdef HAS_UROB
